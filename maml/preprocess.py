@@ -49,7 +49,7 @@ def preprocessing(data_path, cluster_file, short_term_lstm_seq_len=7, last_featu
                             # get features
                             cnn_feature[cnn_nbhd_x - (x - cnn_nbhd_size), cnn_nbhd_y - (y - cnn_nbhd_size),
                             :] = data[real_t, cnn_nbhd_x, cnn_nbhd_y, :]
-                    cnn_features[seqn].append(cnn_feature)
+                    cnn_features[seqn].append(cnn_feature)#global
 
                     # lstm features
                     # nbhd feature, zero_padding

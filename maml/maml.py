@@ -235,7 +235,7 @@ class AttentionSTDN(BasicModel):
         label = tf.reshape(label, [-1])
         pred_loss = tf.reduce_mean(tf.square(pred - label))
 
-        one_hot_cluster = tf.one_hot(cluster, self.cluster_num)
+        one_hot_cluster = tf.one_hot(cluster, self.cluster_num) #one hot encoding
         cluster_loss = tf.reduce_mean(-cluster_weight * tf.reduce_sum(one_hot_cluster * tf.log(att_val), axis=1))
         return pred_loss, cluster_loss
 
